@@ -37,3 +37,14 @@ botaoApaga.addEventListener('click', function () {
    
 })
 
+let botaoFinalizados = document.querySelector("#remover-finalizados");
+
+botaoFinalizados.addEventListener('click', function () {
+   let lineCompleted = document.getElementsByClassName('completed');
+
+   for (let index = 0; index < lineCompleted.length; index+= 0) {
+     
+      list.removeChild(lineCompleted[index]);
+   }
+
+})
