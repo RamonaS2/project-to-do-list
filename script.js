@@ -1,19 +1,27 @@
 let botao = document.querySelector('#criar-tarefa');
+const list = document.querySelector('#lista-tarefas');
+
+botao.addEventListener('click', function () {
+  let inputValue = document.querySelector('#texto-tarefa').value;
+  let itemList = document.createElement('li');
+
+  itemList.innerText = inputValue;
+
+  list.appendChild(itemList);
+
+  let input = document.querySelector('#texto-tarefa');
+  input.value = '';
+});
+
+function backgroundLine(event) {
+  event.target.style.backgroundColor = 'gray';
+}
+list.addEventListener('click', backgroundLine);
 
 
-botao.addEventListener('click', function(){
+function classLineColor(event) {
+  event.target.classList.toggle('completed');
+}
 
-   let inputValue = document.querySelector("#texto-tarefa").value;
-   let itemList = document.createElement('li');
-   
-   itemList.innerText = inputValue;
+list.addEventListener('dblclick', classLineColor);
 
-   let list = document.querySelector("#lista-tarefas");
-   
-   list.appendChild(itemList); 
-
-   let input = document.querySelector("#texto-tarefa");
-   input.value = '';
-   
-} 
-)
