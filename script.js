@@ -15,8 +15,13 @@ botao.addEventListener('click', function () {
 });
 
 function backgroundLine(event) {
-  event.target.style.backgroundColor = 'gray';
+   let line = document.getElementsByTagName('li')
+   for (let index = 0; index < line.length; index++) {
+      line[index] = event.target.style.backgroundColor = 'gray';
+       
+   }
 }
+
 list.addEventListener('click', backgroundLine);
 
 function classLineColor(event) {
@@ -48,3 +53,23 @@ botaoFinalizados.addEventListener('click', function () {
    }
 
 })
+
+
+
+let botaoSelectRemove = document.querySelector("#remover-selecionado");
+
+function selectItens (event){
+event.target.classList.toggle('selecionados');
+}
+
+list.addEventListener('click', selectItens);
+
+function removeItens () {
+let lineSelect = document.getElementsByClassName('selecionados');
+
+for(let i = 0; i < lineSelect.length; i += 0){
+   list.removeChild(lineSelect[i]);
+}
+}
+
+botaoSelectRemove.addEventListener('click', removeItens); 
