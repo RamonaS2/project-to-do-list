@@ -15,15 +15,12 @@ botao.addEventListener('click', function () {
 });
 
 function backgroundLine(event) {
- 
- let classSelected = document.getElementsByClassName('selected')[0];
- console.log(classSelected);
- if(classSelected){
-   classSelected.classList.remove('selected');
- }
- event.target.classList.toggle('selected');
- 
- // event.target.style.backgroundColor = 'gray';
+  let classSelected = document.getElementsByClassName('selected')[0];
+  console.log(classSelected);
+  if (classSelected) {
+    classSelected.classList.remove('selected');
+  }
+  event.target.classList.toggle('selected');
 }
 list.addEventListener('click', backgroundLine);
 
@@ -77,17 +74,15 @@ let botaoSalva = document.querySelector('#salvar-tarefas');
 
 botaoSalva.addEventListener('click', function () {
   localStorage.setItem('sList', list.innerHTML);
-
 });
 
 function listaSalva() {
   let listS = localStorage.getItem('sList');
 
   list.innerHTML = listS;
-
 }
 
-window.onload = listaSalva ();
+window.onload = listaSalva();
 
 //REQUISITO 13
 // MOVER PARA CIMA
